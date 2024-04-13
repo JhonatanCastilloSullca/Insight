@@ -2,19 +2,17 @@ import { useState } from 'react'
 import './index.css'
 import { Link, NavLink } from 'react-router-dom';
 import Cart from '../Cart';
-import { Card, Col, Container, Dropdown, DropdownButton, Row } from 'react-bootstrap';
+import { Card, Col, Container, Dropdown, DropdownButton, Row, Nav } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { useFetch } from '../../Hook/useFetch';
+import { FaEnvelope, FaFacebookF, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa6';
 function Header() {
     const { i18n } = useTranslation();
     const handleChangeLng = (lng) => {
         i18n.changeLanguage(lng);
         localStorage.setItem('lng', lng);
     }
-    const [click, setClick] = useState(false);
     const [navbar, setNavbar] = useState(false);
-    const handleClick = () => setClick(!click);
-    const closeMobileMenu = () => setClick(false);
     const changeBackground = () => {
         if (window.scrollY >= 80) {
             setNavbar(true);
@@ -36,104 +34,47 @@ function Header() {
     if (!categorias) return <div>No se encontraron tours</div>;
     return (
         <>
-            <nav className={navbar ? 'navbar active navbar-expand-lg' : 'navbar navbar-expand-lg'}  >
-                <div className="container">
-                    <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                        {navbar ? <img src="../src/assets/images/vertigo-logo-horizontal-2.webp" alt="logo-vertigo" /> : <img className='img-header-logo' src="../src/assets/images/vertigologo2.webp" alt="logo-vertigo" />}
-                    </Link>
-                    <div className='menu-icon' onClick={handleClick}>
-                        x
-                    </div>
-                    <div className="collapse navbar-collapse">
-                        <ul className="navbar-nav ml-auto d-flex flex-row">
-                            <li className="nav-item d-flex align-items-center text-white">
-                                <NavLink to='/' className={({ isActive }) => {
-                                    return isActive ? 'nav-link active' : ' nav-link'
-                                }} onClick={closeMobileMenu}>
-                                    Home
-                                </NavLink>
-                            </li>
-                            {categorias.map((tour) => (
-                                <li className="nav-item d-flex align-items-center text-white" key={tour.id}>
-                                    <Dropdown>
-                                        <Dropdown.Toggle variant="transparent" id={`dropdown-${tour.id}`} className="nav-link p-0">
-                                            {tour.nombre} {/* Asumiendo que quieres mostrar el nombre del tour aquí */}
-                                        </Dropdown.Toggle>
-                                        <Dropdown.Menu className='drpwdpwm-menu'>
-                                            <div className="menuvertigo">
-                                                <Container className='p-4'>
-                                                    <Row className='w-100'>
-                                                        <Col md={8}>
-                                                            <Row >
-                                                                {tour.tours.map((categoria) => (
-                                                                    <Col key={categoria.id}>
-                                                                        <NavLink to={`/tours/${categoria.id}`} className='nav-link tittle-categoria-header w-100' onClick={closeMobileMenu} >
-                                                                            {categoria.nombre}
-                                                                        </NavLink>
-                                                                    </Col>
-                                                                ))}
-                                                            </Row>
-                                                        </Col>
-                                                        <Col md={4}>
-                                                            <Container className='d-flex justify-content-center'>
-                                                                <Card style={{ width: '18rem' }}>
-                                                                    <Card.Img variant="top" src="https://vertigotravelperu.com/wp-content/uploads/2022/09/manu1.png" />
-                                                                </Card>
-                                                            </Container>
-                                                        </Col>
-                                                    </Row>
-                                                </Container>
-                                            </div>
-                                        </Dropdown.Menu>
-                                    </Dropdown>
-                                </li>
-                            ))}
-                            <li className="nav-item d-flex align-items-center text-white">
-                                <Dropdown>
-                                    <Dropdown.Toggle as={NavLink} to='/tours' variant="transparent" id="dropdown-basic" className="nav-link p-0">
-                                        Tours
-                                    </Dropdown.Toggle>
-                                    <Container>
-                                        <Dropdown.Menu as="div" className='drpwdpwm-menu'>
-                                            <div className="menuvertigo ">
-                                                <Dropdown.Item>
-                                                    <Row>
-                                                        {categorias.map((tour) => (
-                                                            <Col md={3} key={tour.id}>
-                                                                <NavLink to={`/tours/${tour.id}`} className='nav-link' onClick={closeMobileMenu}>
-                                                                    {tour.nombre}
-                                                                </NavLink>
-                                                            </Col>
-                                                        ))}
-                                                    </Row>
-                                                </Dropdown.Item>
-                                            </div>
-                                        </Dropdown.Menu>
-                                    </Container>
-                                </Dropdown>
-                            </li>
-                            <li className="nav-item d-flex align-items-center text-white">
-                                <DropdownButton
-                                    id="language-selector"
-                                    variant="transparent"
-                                    className="nav-link p-0 bg-transparent"
-                                    title={<><span className="ml-2">{i18n.language === 'es' ? <img src="../../src/assets/images/iconos/pe.svg" className='flags text-white' alt="Perú" /> : <img src="../../src/assets/images/iconos/us.svg" className='flags' alt="Estados Unidos" />}</span></>}
-                                >
-                                    <Dropdown.Item onClick={() => handleChangeLng('es')}>
-                                        <img src="../../src/assets/images/iconos/pe.svg" className='flags' alt="Perú" />Español
-                                    </Dropdown.Item>
-                                    <Dropdown.Item onClick={() => handleChangeLng('en')}>
-                                        <img src="../../src/assets/images/iconos/us.svg" className='flags' alt="Estados Unidos" />English
-                                    </Dropdown.Item>
-                                </DropdownButton>
-                            </li>
-                            <li className="nav-item d-flex align-items-center text-white">
-                                <Cart></Cart>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+
+            <Row className='w-100 m-0'>
+                <Col md={3} className='bg-dark p-4 py-2 d-flex justify-content-center align-items-center'>
+                    <img src="../src/assets/images/vertigo-logo-horizontal-2.webp" className="img-size" alt="logo-vertigo" />
+                </Col>
+                <Col md={9} className='bg-white'>
+                    <Row className='w-100'>
+                        <Col md={7} className='bg-white d-flex justify-content-start align-items-center'>
+                            <div className="h-100 d-inline-flex align-items-center py-2 me-4">
+                                <FaEnvelope />
+                                <p className="mb-0">info@example.com</p>
+                            </div>
+                            <div className="h-100 d-inline-flex align-items-center py-2 me-4">
+                                <FaEnvelope />
+                                <p className="mb-0">info@example.com</p>
+                            </div>
+                        </Col>
+                        <Col md={5} className='bg-dark bg-white d-flex justify-content-end align-items-center px-2'>
+                            <div className="d-inline-flex align-items-center py-2">
+                                <a className="me-3" href=""><FaFacebookF /></a>
+                                <a className="me-3" href=""><FaTwitter /></a>
+                                <a className="me-3" href=""><FaLinkedin /></a>
+                                <a className="me-3" href=""><FaInstagram /></a>
+                                <a className="" href=""><FaYoutube /></a>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={12} className='bg-dark d-flex justify-content-end align-items-center p-2'>
+                            <Nav className="d-flex align-items-center text-white">
+                                <NavLink className="nav-link text-white" to='/'>Home</NavLink>
+                                <NavLink className="nav-link text-white" to='/'>About</NavLink>
+                                <NavLink className="nav-link text-white" to='/'>Services</NavLink>
+                                <NavLink className="nav-link text-white" to='/'>Contact</NavLink>
+                                <NavLink className="nav-link text-white" to='/'>Blog</NavLink>
+                            </Nav>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+
         </>
     )
 }

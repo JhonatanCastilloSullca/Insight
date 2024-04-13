@@ -10,27 +10,15 @@ function Destinos() {
         <>
             <div className="ftco-section img ftco-select-destination" style={{ backgroundImage: "url('../../../src/assets/images/bg_3.jpg')" }}>
                 <div className="container">
-                    <div className="row justify-content-center pb-4">
-                        <div className="col-md-12 heading-section text-center">
-                            <span className="subheading">Nuestros paquetes a nivel nacional</span>
-                            <h2 className="mb-4">Selecciona tu destino favorito</h2>
-                        </div>
-                    </div>
-                </div>
-                <div className="container">
-                    <div className="row justify-content-center pb-4">
+                    <div className="row justify-content-center">
                         <div className="row">
                             <Swiper
-                                modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
+                                modules={[Autoplay, Navigation, Scrollbar, A11y]}
                                 spaceBetween={50}
                                 centeredSlides={true}
-                                grabCursor={true}
                                 autoplay={{
-                                    delay: 800,
+                                    delay: 1800,
                                     disableOnInteraction: false,
-                                }}
-                                pagination={{
-                                    clickable: true,
                                 }}
                                 breakpoints={{
                                     640: {
@@ -38,64 +26,67 @@ function Destinos() {
                                         spaceBetween: 20,
                                     },
                                     768: {
-                                        slidesPerView: 3,
-                                        spaceBetween: 40,
+                                        slidesPerView: 5,
+                                        spaceBetween: 10,
                                     },
                                     1024: {
-                                        slidesPerView: 3,
-                                        spaceBetween: 50,
+                                        slidesPerView: 5,
+                                        spaceBetween: 10,
                                     },
                                 }}
                                 className="mySwiperDestiny"
                             >
                                 <SwiperSlide>
-                                    <div className="item">
-                                        <div className="project-destination">
-                                            <a href="#" className="img" style={{ backgroundImage: "url('../../../src/assets/images/place-1.jpg')" }}>
-                                                <div className="text">
-                                                    <h3>Philippines</h3>
-                                                    <span>8 Tours</span>
-                                                </div>
-                                            </a>
-                                        </div>
+                                    <div className="brand-item-content">
+                                        <img
+                                            decoding="async"
+                                            src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
+                                            alt="Logo de Tripadvisor en Cuzco Travels"
+                                            className="brand-img"
+                                        />
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <div className="item">
-                                        <div className="project-destination">
-                                            <a href="#" className="img" style={{ backgroundImage: "url('../../../src/assets/images/place-1.jpg')" }}>
-                                                <div className="text">
-                                                    <h3>Philippines</h3>
-                                                    <span>8 Tours</span>
-                                                </div>
-                                            </a>
-                                        </div>
+                                    <div className="brand-item-content">
+                                        <img
+                                            decoding="async"
+                                            src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
+                                            alt="Logo de Tripadvisor en Cuzco Travels"
+                                            className="brand-img"
+                                        />
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <div className="item">
-                                        <div className="project-destination">
-                                            <a href="#" className="img" style={{ backgroundImage: "url('../../../src/assets/images/place-1.jpg')" }}>
-                                                <div className="text">
-                                                    <h3>Philippines</h3>
-                                                    <span>8 Tours</span>
-                                                </div>
-                                            </a>
-                                        </div>
+                                    <div className="brand-item-content">
+                                        <img
+                                            decoding="async"
+                                            src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
+                                            alt="Logo de Tripadvisor en Cuzco Travels"
+                                            className="brand-img"
+                                        />
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <div className="item">
-                                        <div className="project-destination">
-                                            <a href="#" className="img" style={{ backgroundImage: "url('../../../src/assets/images/place-1.jpg')" }}>
-                                                <div className="text">
-                                                    <h3>Philippines</h3>
-                                                    <span>8 Tours</span>
-                                                </div>
-                                            </a>
-                                        </div>
+                                    <div className="brand-item-content">
+                                        <img
+                                            decoding="async"
+                                            src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
+                                            alt="Logo de Tripadvisor en Cuzco Travels"
+                                            className="brand-img"
+                                        />
                                     </div>
                                 </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="brand-item-content">
+                                        <img
+                                            decoding="async"
+                                            src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
+                                            alt="Logo de Tripadvisor en Cuzco Travels"
+                                            className="brand-img"
+                                        />
+                                    </div>
+                                </SwiperSlide>
+
                             </Swiper>
                         </div>
                     </div>

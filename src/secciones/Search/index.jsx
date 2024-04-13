@@ -84,7 +84,7 @@ function Search() {
 
     return (
         <>
-            <div className="ftco-section ftco-no-pb ftco-no-pt">
+            <div className="ftco-section ftco-no-pb ftco-no-pt p-0">
                 <Container>
                     <Row>
                         <Col md={12}>

@@ -10,3 +10,20 @@
     flex: 0 0 100%;
     min-width: 0;
 }
+
+
+
+
+
+
+.brand-item-content img {
+    opacity: 0.5;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.brand-item-content:hover img {
+    opacity: 1;
+    -webkit-animation: beat 1.5s ease 0s infinite;
+    animation: beat 1.5s ease 0s infinite;
+}

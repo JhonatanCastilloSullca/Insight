@@ -4,60 +4,75 @@ import './index.css'
 function Footer() {
     return (
         <>
-            <div className="footer-prueba">
-            </div>
-            <footer className="ftco-footer bg-bottom ftco-no-pt" style={{ backgroundImage: "url('../../../src/assets/images/bg_3.jpg')" }}>
-                <div className="container">
-                    <div className="row mb-5">
-                        <div className="col-md pt-5">
-                            <div className="ftco-footer-widget pt-md-5 mb-4">
-                                <h2 className="ftco-heading-2">Sobre nosotros</h2>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae quasi voluptatem nesciunt laborum voluptatum iure corrupti perferendis expedita omnis impedit! Omnis reiciendis illum ut doloribus in odit suscipit aut ea?</p>
-                                <ul className="ftco-footer-social list-unstyled float-md-left float-lft">
-                                    <li className=""><a href="#"><span className="fa fa-twitter"></span></a></li>
-                                    <li className=""><a href="#"><span className="fa fa-facebook"></span></a></li>
-                                    <li className=""><a href="#"><span className="fa fa-instagram"></span></a></li>
-                                </ul>
+            <div className="container-fluid bg-dark text-light footer  " data--delay="0.1s">
+                <div className="container pb-5">
+                    <div className="row g-5">
+                        <div className="col-md-6 col-lg-4">
+                            <div className="bg-primary rounded p-4">
+                                <a href="index.html">
+                                    <h1 className="text-white text-uppercase mb-3">Hotelier</h1>
+                                </a>
+                                <p className="text-white mb-0">
+                                    Descargue <a className="text-dark fw-medium"
+                                        href="https://htmlcodex.com/hotel-html-template-pro">Hotelier – Versión Premium</a>,
+                                    construya un sitio web profesional para su negocio hotelero y capte la atención de nuevos
+                                    visitantes desde el lanzamiento de su sitio.
+                                </p>
                             </div>
                         </div>
-                        <div className="col-md pt-5 border-left">
-                            <div className="ftco-footer-widget pt-md-5 mb-4 ml-md-5">
-                                <h2 className="ftco-heading-2">Categoria de Tours</h2>
-                                <ul className="list-unstyled">
-                                    <li><a href="#" className="py-2 d-block">Online Enquiry</a></li>
-                                    <li><a href="#" className="py-2 d-block">General Enquiries</a></li>
-                                    <li><a href="#" className="py-2 d-block">Booking Conditions</a></li>
-                                    <li><a href="#" className="py-2 d-block">Privacy and Policy</a></li>
-                                    <li><a href="#" className="py-2 d-block">Refund Policy</a></li>
-                                    <li><a href="#" className="py-2 d-block">Call Us</a></li>
-                                </ul>
+                        <div className="col-md-6 col-lg-3">
+                            <h6 className="section-title text-start text-primary text-uppercase mb-4">Contacto</h6>
+                            <p className="mb-2"><i className="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                            <p className="mb-2"><i className="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                            <p className="mb-2"><i className="fa fa-envelope me-3"></i>info@example.com</p>
+                            <div className="d-flex pt-2">
+                                <a className="btn btn-outline-light btn-social" href="#"><i className="fab fa-twitter"></i></a>
+                                <a className="btn btn-outline-light btn-social" href="#"><i className="fab fa-facebook-f"></i></a>
+                                <a className="btn btn-outline-light btn-social" href="#"><i className="fab fa-youtube"></i></a>
+                                <a className="btn btn-outline-light btn-social" href="#"><i className="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
-                        <div className="col-md pt-5 border-left">
-                            <div className="ftco-footer-widget pt-md-5 mb-4">
-                                <h2 className="ftco-heading-2">Contactanos</h2>
-                                <div className="block-23 mb-3">
-                                    <ul>
-                                        <li><span className="icon fa fa-map-marker"></span><span className="text">Direcion 123 -A</span></li>
-                                        <li><a href="#"><span className="icon fa fa-phone"></span><span className="text">+51 999 999 999</span></a></li>
-                                        <li><a href="#"><span className="icon fa fa-paper-plane"></span><span
-                                            className="text">info@vertigotravel.com</span></a></li>
-                                    </ul>
+                        <div className="col-lg-5 col-md-12">
+                            <div className="row gy-5 g-4">
+                                <div className="col-md-6">
+                                    <h6 className="section-title text-start text-primary text-uppercase mb-4">Compañía</h6>
+                                    <a className="btn btn-link" href="#">Sobre Nosotros</a>
+                                    <a className="btn btn-link" href="#">Contacto</a>
+                                    <a className="btn btn-link" href="#">Política de Privacidad</a>
+                                    <a className="btn btn-link" href="#">Términos y Condiciones</a>
+                                    <a className="btn btn-link" href="#">Soporte</a>
+                                </div>
+                                <div className="col-md-6">
+                                    <h6 className="section-title text-start text-primary text-uppercase mb-4">Servicios</h6>
+                                    <a className="btn btn-link" href="#">Comida & Restaurante</a>
+                                    <a className="btn btn-link" href="#">Spa & Fitness</a>
+                                    <a className="btn btn-link" href="#">Deportes & Juegos</a>
+                                    <a className="btn btn-link" href="#">Eventos & Fiestas</a>
+                                    <a className="btn btn-link" href="#">GYM & Yoga</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-md-12 text-center">
-
-                            <p>
-                                Vertigo
-
-                            </p>
+                </div>
+                <div className="container">
+                    <div className="copyright">
+                        <div className="row">
+                            <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                                &copy; <a className="border-bottom" href="#">Nombre de tu Sitio</a>, Todos los Derechos Reservados.
+                                Diseñado por <a className="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                            </div>
+                            <div className="col-md-6 text-center text-md-end">
+                                <div className="footer-menu">
+                                    <a href="#">Inicio</a>
+                                    <a href="#">Cookies</a>
+                                    <a href="#">Ayuda</a>
+                                    <a href="#">FAQs</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </footer>
+            </div>
         </>
     )
 }
