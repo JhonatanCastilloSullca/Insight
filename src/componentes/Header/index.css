@@ -23,6 +23,12 @@
     z-index: 99;
 }
 
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
 .navbar.active {
     background: linear-gradient(180deg, #059d0ac7 0%, #059d0a 100%) !important
 }

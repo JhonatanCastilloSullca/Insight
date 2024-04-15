@@ -10,6 +10,12 @@ import CardFormulario from "../../componentes/CardFormulario";
 import TourInformation from "../../componentes/ToursInfoItems";
 import { useFetch } from "../../Hook/useFetch";
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+
 
 function ToursPage() {
 
@@ -37,27 +43,110 @@ function ToursPage() {
 
     return (
         <>
-            <div className="hero-wrap js-mediumheight" style={{ backgroundImage: `url('${tourData.imagenprincipal}')` }}>
-                <div className="overlay-real"></div>
-                <div className="container p-3">
-                    <div className="row no-gutters slider-text js-mediumheight align-items-center">
-                        <div className="col-md-7 ">
+            <Container className="tours-galeria content-after-header">
+                <Swiper
+                    modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
+                    spaceBetween={50}
+                    slidesPerView={1}
+                    centeredSlides={true}
+                    grabCursor={true}
+                    loop={true}
+                    autoplay={{
+                        delay: 1000,
+                        disableOnInteraction: false,
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        768: {
+                            slidesPerView: 4,
+                            spaceBetween: 40,
+                        },
+                        1024: {
+                            slidesPerView: 4,
+                            spaceBetween: 50,
+                        },
+                    }}
+                    className="mySwiperDestiny"
+                >
+                    <SwiperSlide>
+                        <div className="brand-item-content">
+                            <img
+                                decoding="async"
+                                src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
+                                alt="Logo de Tripadvisor en Cuzco Travels"
+                                className="brand-img sda"
+                            />
                         </div>
-                    </div>
-                </div>
-            </div>
-            <Container>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="brand-item-content">
+                            <img
+                                decoding="async"
+                                src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
+                                alt="Logo de Tripadvisor en Cuzco Travels"
+                                className="brand-img sda"
+                            />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="brand-item-content">
+                            <img
+                                decoding="async"
+                                src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
+                                alt="Logo de Tripadvisor en Cuzco Travels"
+                                className="brand-img sda"
+                            />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="brand-item-content">
+                            <img
+                                decoding="async"
+                                src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
+                                alt="Logo de Tripadvisor en Cuzco Travels"
+                                className="brand-img sda"
+                            />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="brand-item-content">
+                            <img
+                                decoding="async"
+                                src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
+                                alt="Logo de Tripadvisor en Cuzco Travels"
+                                className="brand-img sda"
+                            />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="brand-item-content">
+                            <img
+                                decoding="async"
+                                src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
+                                alt="Logo de Tripadvisor en Cuzco Travels"
+                                className="brand-img"
+                            />
+                        </div>
+                    </SwiperSlide>
+
+                </Swiper>
+            </Container>
+            <div className="ftco-section services-section pt-0 descriptio-tour-container">
                 <ToursInfoSection
                     titulo={tourData.nombre}
                     duracion={tourData.duracion}
                     precio={tourData.precio}
                     categoria={tourData.categoria.nombre}
                 />
-            </Container>
-            <div className="ftco-section services-section pt-4 descriptio-tour-container">
                 <div className="container p-4">
                     <div className="row d-flex">
-                        <div className="col-md-4">
+                        <div className="col-md-3 me-4">
                             <div className="row gap-4">
                                 <CardFormulario tour={tourData} />
                                 {tourData.tamaño_grupo || tourData.Lugar_de_Recojo || tourData.ubicaciones || (tourData.Idiomas_Disponibles && tourData.Idiomas_Disponibles.length > 0) ? (
@@ -70,6 +159,7 @@ function ToursPage() {
                                 ) : null}
                             </div>
                         </div>
+
                         <div className="col-md-8 heading-section">
                             <div className="w-100">
                                 {tourData.nombre && tourData.descripcion && (
@@ -78,24 +168,9 @@ function ToursPage() {
                                         <div className="incluye-tours" dangerouslySetInnerHTML={{ __html: tourData.descripcion }}></div>
                                     </Container>
                                 )}
-                                {detallesTourDias && detallesTourDias.length > 0 && (
-                                    <Container className="mt-4 ">
-                                        <h3 className="box-title m-0">Itinerario</h3>
-                                        <Accordion defaultActiveKey={['0']} alwaysOpen className="pt-4">
-                                            {detallesTourDias && detallesTourDias.map((detalle, index) => (
-                                                <Accordion.Item key={index} eventKey={String(index)}>
-                                                    <Accordion.Header><h6 className="fw-bold text-primary">Día {index + 1}: {detalle.titulo}</h6></Accordion.Header>
-                                                    <Accordion.Body>
-                                                        <div className="incluye-tours" dangerouslySetInnerHTML={{ __html: detalle.descripcion }}></div>
-                                                    </Accordion.Body>
-                                                </Accordion.Item>
-                                            ))}
-                                        </Accordion>
-                                    </Container>
-                                )}
                                 {tourData.incluye && (
-                                    <Container className="mt-4">
-                                        <Card>
+                                    <Container className="mt-4 ">
+                                        <Card className="border-0">
                                             <Card.Body className="">
                                                 <h3 className="box-title m-0">Incluye / No Incluye</h3>
                                                 <Row>
@@ -117,8 +192,8 @@ function ToursPage() {
                                     </Container>
                                 )}
                                 {tourData.recomendaciones && (
-                                    <Container className="mt-4 ">
-                                        <Card>
+                                    <Container className="mt-4  ">
+                                        <Card className="border-0">
                                             <Card.Body className="">
                                                 <h3 className="box-title m-0">Qué Llevar</h3>
                                                 <Row className="pt-4">
@@ -129,6 +204,22 @@ function ToursPage() {
                                         </Card>
                                     </Container>
                                 )}
+                                {detallesTourDias && detallesTourDias.length > 0 && (
+                                    <Container className="mt-4 ">
+                                        <h3 className="box-title m-0">Itinerario</h3>
+                                        <Accordion defaultActiveKey={['0']} alwaysOpen className="pt-4">
+                                            {detallesTourDias && detallesTourDias.map((detalle, index) => (
+                                                <Accordion.Item key={index} eventKey={String(index)}>
+                                                    <Accordion.Header><h6 className="fw-bold text-primary">Día {index + 1}: {detalle.titulo}</h6></Accordion.Header>
+                                                    <Accordion.Body>
+                                                        <div className="incluye-tours" dangerouslySetInnerHTML={{ __html: detalle.descripcion }}></div>
+                                                    </Accordion.Body>
+                                                </Accordion.Item>
+                                            ))}
+                                        </Accordion>
+                                    </Container>
+                                )}
+
                                 {tourData.galeria && tourData.galeria.length > 0 && (
                                     <Container className="mt-4">
                                         <h3 className="box-title m-0">Galería</h3>

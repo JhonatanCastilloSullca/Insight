@@ -93,10 +93,10 @@ function Search() {
                                     <Col md={12} className="tab-wrap">
                                         <Tab.Content id="v-pills-tabContent">
                                             <Tab.Pane active id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
-                                                <Form className="search-property-1">
-                                                    <Row >
+                                                <Form className="search-property-1 my-2">
+                                                    <Row className='p-2'>
                                                         <Col md className="d-flex">
-                                                            <div className="form-group px-4 py-2 border-0">
+                                                            <div className="form-group px-4 py-2">
                                                                 <div className="form-field d-flex h2 m-0">
                                                                     <FaSearch className='icon-search' ></FaSearch>
                                                                     <Form.Control type="text" placeholder="Buscar tours..." className='h1 m-0 text-search' value={input} onChange={(e) => handleChange(e.target.value)} />

@@ -1,0 +1,105 @@
+.search-property-1 .form-group {
+    position: relative;
+    margin-bottom: 0;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767.98px) {
+    .search-property-1 .form-group {
+        margin-bottom: 0;
+        border: none;
+    }
+}
+
+.search-property-1 .form-group label {
+    font-weight: 700;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.8);
+    color: #059d0a;
+    text-transform: uppercase;
+}
+
+.search-property-1 .form-group .form-field {
+    position: relative;
+    display: block;
+}
+
+.search-property-1 .form-group .form-control {
+    padding: 0;
+    padding-left: 20px;
+    display: block;
+    width: 100%;
+    height: inherit !important;
+    font-size: 16px;
+    border: none !important;
+    color: rgba(0, 0, 0, 0.4) !important;
+    background: transparent !important;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+}
+
+.search-property-1 .form-group .form-control::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.search-property-1 .form-group .form-control::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.search-property-1 .form-group .form-control:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.search-property-1 .form-group .form-control:-moz-placeholder {
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.search-property-1 .form-group .form-control.btn {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #059d0a !important;
+    border: none !important;
+    color: #fff !important;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+}
+
+@media (max-width: 767.98px) {
+    .search-property-1 .form-group .form-control.btn {
+        padding: 20px;
+    }
+}
+
+.search-property-1 .form-group .select-wrap {
+    position: relative;
+}
+
+.search-property-1 .form-group .select-wrap select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.search-property-1 .form-group .icon {
+    position: absolute;
+    top: 51%;
+    left: 0;
+    font-size: 16px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767.98px) {
+    .search-property-1 .form-group .icon {
+        right: 10px;
+    }
+}

@@ -8,7 +8,7 @@ import 'swiper/css/scrollbar';
 function Destinos() {
     return (
         <>
-            <div className="ftco-section img ftco-select-destination" style={{ backgroundImage: "url('../../../src/assets/images/bg_3.jpg')" }}>
+            <div className="ftco-section img ftco-select-destination py-4">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="row">
@@ -16,6 +16,7 @@ function Destinos() {
                                 modules={[Autoplay, Navigation, Scrollbar, A11y]}
                                 spaceBetween={50}
                                 centeredSlides={true}
+                                loop={true}
                                 autoplay={{
                                     delay: 1800,
                                     disableOnInteraction: false,
@@ -40,7 +41,17 @@ function Destinos() {
                                     <div className="brand-item-content">
                                         <img
                                             decoding="async"
-                                            src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
+                                            src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/frommperu-1.png"
+                                            alt="Logo de Tripadvisor en Cuzco Travels"
+                                            className="brand-img"
+                                        />
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="brand-item-content">
+                                        <img
+                                            decoding="async"
+                                            src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/micc-1.png"
                                             alt="Logo de Tripadvisor en Cuzco Travels"
                                             className="brand-img"
                                         />
@@ -60,7 +71,7 @@ function Destinos() {
                                     <div className="brand-item-content">
                                         <img
                                             decoding="async"
-                                            src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
+                                            src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/gerrce-1.png"
                                             alt="Logo de Tripadvisor en Cuzco Travels"
                                             className="brand-img"
                                         />
@@ -70,23 +81,12 @@ function Destinos() {
                                     <div className="brand-item-content">
                                         <img
                                             decoding="async"
-                                            src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
+                                            src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/gobb-1.png"
                                             alt="Logo de Tripadvisor en Cuzco Travels"
                                             className="brand-img"
                                         />
                                     </div>
                                 </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className="brand-item-content">
-                                        <img
-                                            decoding="async"
-                                            src="https://www.cuzcotravels.com/wp-content/uploads/2023/05/tripadvirrso.png"
-                                            alt="Logo de Tripadvisor en Cuzco Travels"
-                                            className="brand-img"
-                                        />
-                                    </div>
-                                </SwiperSlide>
-
                             </Swiper>
                         </div>
                     </div>

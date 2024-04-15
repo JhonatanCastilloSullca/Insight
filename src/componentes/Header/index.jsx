@@ -14,7 +14,7 @@ function Header() {
     }
     const [navbar, setNavbar] = useState(false);
     const changeBackground = () => {
-        if (window.scrollY >= 80) {
+        if (window.scrollY >= 100) {
             setNavbar(true);
         } else {
             setNavbar(false);
@@ -34,35 +34,14 @@ function Header() {
     if (!categorias) return <div>No se encontraron tours</div>;
     return (
         <>
+            {
+                navbar ? (
 
-            <Row className='w-100 m-0'>
-                <Col md={3} className='bg-dark p-4 py-2 d-flex justify-content-center align-items-center'>
-                    <img src="../src/assets/images/vertigo-logo-horizontal-2.webp" className="img-size" alt="logo-vertigo" />
-                </Col>
-                <Col md={9} className='bg-white'>
-                    <Row className='w-100'>
-                        <Col md={7} className='bg-white d-flex justify-content-start align-items-center'>
-                            <div className="h-100 d-inline-flex align-items-center py-2 me-4">
-                                <FaEnvelope />
-                                <p className="mb-0">info@example.com</p>
-                            </div>
-                            <div className="h-100 d-inline-flex align-items-center py-2 me-4">
-                                <FaEnvelope />
-                                <p className="mb-0">info@example.com</p>
-                            </div>
+                    <Row className='w-100 m-0 fixed-navbar'>
+                        <Col md={12} className='bg-dark d-flex justify-content-center align-items-center p-2'>
+                            <img src="../src/assets/images/vertigo-logo-horizontal-2.webp" className="img-size" alt="logo-vertigo" />
                         </Col>
-                        <Col md={5} className='bg-dark bg-white d-flex justify-content-end align-items-center px-2'>
-                            <div className="d-inline-flex align-items-center py-2">
-                                <a className="me-3" href=""><FaFacebookF /></a>
-                                <a className="me-3" href=""><FaTwitter /></a>
-                                <a className="me-3" href=""><FaLinkedin /></a>
-                                <a className="me-3" href=""><FaInstagram /></a>
-                                <a className="" href=""><FaYoutube /></a>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md={12} className='bg-dark d-flex justify-content-end align-items-center p-2'>
+                        <Col md={12} className='bg-dark d-flex justify-content-center align-items-center p-0'>
                             <Nav className="d-flex align-items-center text-white">
                                 <NavLink className="nav-link text-white" to='/'>Home</NavLink>
                                 <NavLink className="nav-link text-white" to='/'>About</NavLink>
@@ -72,9 +51,48 @@ function Header() {
                             </Nav>
                         </Col>
                     </Row>
-                </Col>
-            </Row>
-
+                ) : (
+                    <Row className='w-100 m-0 fixed-navbar' >
+                        < Col md={3} className='bg-dark p-4 py-2 d-flex justify-content-center align-items-center'>
+                            <img src="../src/assets/images/vertigo-logo-horizontal-2.webp" className="img-size" alt="logo-vertigo" />
+                        </Col >
+                        <Col md={9} className='bg-white'>
+                            <Row className='w-100'>
+                                <Col md={7} className='bg-white d-flex justify-content-start align-items-center'>
+                                    <div className="h-100 d-inline-flex align-items-center py-2 me-4">
+                                        <FaEnvelope />
+                                        <p className="mb-0">info@example.com</p>
+                                    </div>
+                                    <div className="h-100 d-inline-flex align-items-center py-2 me-4">
+                                        <FaEnvelope />
+                                        <p className="mb-0">info@example.com</p>
+                                    </div>
+                                </Col>
+                                <Col md={5} className='bg-dark bg-white d-flex justify-content-end align-items-center px-2'>
+                                    <div className="d-inline-flex align-items-center py-2">
+                                        <a className="me-3" href=""><FaFacebookF /></a>
+                                        <a className="me-3" href=""><FaTwitter /></a>
+                                        <a className="me-3" href=""><FaLinkedin /></a>
+                                        <a className="me-3" href=""><FaInstagram /></a>
+                                        <a className="" href=""><FaYoutube /></a>
+                                    </div>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col md={12} className='bg-dark d-flex justify-content-end align-items-center p-2'>
+                                    <Nav className="d-flex align-items-center text-white">
+                                        <NavLink className="nav-link text-white" to='/'>Home</NavLink>
+                                        <NavLink className="nav-link text-white" to='/'>About</NavLink>
+                                        <NavLink className="nav-link text-white" to='/'>Services</NavLink>
+                                        <NavLink className="nav-link text-white" to='/'>Contact</NavLink>
+                                        <NavLink className="nav-link text-white" to='/'>Blog</NavLink>
+                                    </Nav>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row >
+                )
+            }
         </>
     )
 }

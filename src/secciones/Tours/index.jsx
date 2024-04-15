@@ -35,18 +35,16 @@ function Tours() {
 
     return (
         <>
-            <div className="ftco-section">
+            <div className="ftco-section p-4">
                 <div className="container">
-                    <div className="row justify-content-center pb-4">
-                        <div className="col-md-12 heading-section text-center ">
-                            <span className="subheading">Destinos</span>
-                            <h2 className="mb-4">Nuestros Tours</h2>
-                        </div>
+                    <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <h6 className="section-title text-center text-primary text-uppercase">Nuestros Tours</h6>
+                        <h1 className="mb-5">Explore Our <span className="text-primary text-uppercase">Tours</span></h1>
                     </div>
                     <div className="row">
                         <CardTours tours={getRandomTours(ToursData, 3)} />
                         <Col >
-                            <p className='align-items-center justify-content-center d-flex'>
+                            <p className='align-items-center justify-content-center d-flex py-4'>
                                 <NavLink to={`/tours`} className='btn btn-primary py-3 px-4'>
                                     Revisa nuestros tours
                                 </NavLink>

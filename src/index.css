@@ -4,6 +4,11 @@
     --primary-gray: #7c440b;
     --light: #F1F8FF;
     --dark: #000000;
+    --gray: #6c6c6c;
+}
+
+a {
+    text-decoration: none !important;
 }
 
 .fw-medium {
@@ -485,6 +490,16 @@
     border-right: 1px solid rgba(255, 255, 255, .3);
 }
 
+.form-control {
+    height: 52px !important;
+    background: #fff !important;
+    color: #000000 !important;
+    font-size: 18px;
+    border-radius: 5px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
 .footer .footer-menu a:last-child {
     margin-right: 0;
     padding-right: 0;
@@ -497,6 +512,18 @@
 
 .fa-3x {
     font-size: 3rem;
+}
+
+.fa-4x {
+    font-size: 4rem;
+}
+
+.fa-5x {
+    font-size: 5rem;
+}
+
+.fa-6x {
+    font-size: 6rem;
 }
 
 .content-description-services {
@@ -575,4 +602,8 @@
 a {
     color: var(--dark);
     text-decoration: underline;
+}
+
+.text-gray {
+    color: var(--gray);
 }
